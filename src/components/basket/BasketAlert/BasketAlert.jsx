@@ -1,16 +1,22 @@
 import React from "react";
 import { useEffect } from "react";
+import { useContext } from "react";
 
-function BasketAlert(props) {
+import { ShopContext } from "../../../context";
+
+function BasketAlert() {
+    const {basketAlertItemName, clearBasketAlert} = useContext(ShopContext);
+
     useEffect(() => {
-        const timerId = setTimeout(props.clearBasketAlert, 1000)
+        const timerId = setTimeout(clearBasketAlert, 1000)
 
         return () => {clearTimeout(timerId)}
+
     // eslint-disable-next-line
-    }, [props.name])
+    }, [basketAlertItemName])
     return (
         <div id="toast-container">
-            <div className="toast">Предмет "{props.name}" добавлен в корзину</div>
+            <div className="toast">Предмет "{basketAlertItemName}" добавлен в корзину</div>
         </div>
     )
 }

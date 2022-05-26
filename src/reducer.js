@@ -43,25 +43,25 @@ function ShopReducer (state, action) {
                 quantity: 1
             }
 
-        if (purchaseItemIndex === -1) {
-            return {
-                ...state,
-                purchases: [...state.purchases, purchaseItem]
+            if (purchaseItemIndex === -1) {
+                return {
+                    ...state,
+                    purchases: [...state.purchases, purchaseItem],
+                    basketAlertItemName: !state.isBasketOpen ? action.payload.item.name : null
+                }
+            } else {
+                return {
+                    ...state,
+                    purchases: state.purchases.map(el => {
+                        if(el.id === action.payload.item.id) {
+                            return el = {...el, quantity: el.quantity + 1}
+                        } else {
+                            return el
+                        }
+                    }),
+                    basketAlertItemName: action.payload.item.name
+                }
             }
-        } else {
-            return {
-                ...state,
-                purchases: state.map(el => {
-                    if(el.id === action.payload.item.id) {
-                        return el = {...el, quantity: el.quantity + 1}
-                    } else {
-                        return el
-                    }
-                }),
-                alertName: action.payload.item.name
-            }
-        }
-
         case constants.SET_PRODUCTS:
             return {
                 ...state,

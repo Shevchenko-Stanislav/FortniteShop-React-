@@ -1,10 +1,16 @@
 import React from "react";
+import { useContext } from "react";
 
-function Basket(props) {
+import { ShopContext } from "../../context";
+
+function Basket() {
+    const {purchases ,toggleBasket} = useContext(ShopContext);
+    const quantity = purchases.length;
+
     return(
-        <div onClick={props.toggleBasket} className="basket green darken-1">
+        <div onClick={toggleBasket} className="basket green darken-1">
             <i className="material-icons">shopping_cart</i>
-            <span className="purchases">{props.quantity ? props.quantity : null}</span>
+            <span className="purchases">{quantity ? quantity : null}</span>
         </div>
     )
 }

@@ -43,8 +43,8 @@ export const ContextProvider = ({children}) => {
         dispatch({type: constants.ADD_TO_BASKET, payload: {item}})
     }
 
-    value.setProducts = (propducts) => {
-        dispatch({type: constants.SET_PRODUCTS, payload: {propducts: propducts}})
+    value.setProducts = (products) => {
+        dispatch({type: constants.SET_PRODUCTS, payload: {products: products}})
     }
 
     return (
