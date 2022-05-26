@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Shevchenko-Stanislav/FortniteShop-React-/static/css/main.5ed3d627.css",
+    "main.js": "/Shevchenko-Stanislav/FortniteShop-React-/static/js/main.c83a615d.js",
+    "index.html": "/Shevchenko-Stanislav/FortniteShop-React-/index.html",
+    "main.5ed3d627.css.map": "/Shevchenko-Stanislav/FortniteShop-React-/static/css/main.5ed3d627.css.map",
+    "main.c83a615d.js.map": "/Shevchenko-Stanislav/FortniteShop-React-/static/js/main.c83a615d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ed3d627.css",
+    "static/js/main.c83a615d.js"
+  ]
+}
